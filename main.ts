@@ -23,8 +23,8 @@ radio.setTransmitPower(7)
 serial.redirectToUSB()
 basic.forever(function () {
     radio.setGroup(無線グループ)
-    X = pins.analogReadPin(AnalogReadWritePin.P0) * 1 - 512
-    Y = pins.analogReadPin(AnalogReadWritePin.P1) * 1 - 512
+    X = pins.analogReadPin(AnalogReadWritePin.P1) * -1 + 512
+    Y = pins.analogReadPin(AnalogReadWritePin.P0) * -1 + 512
     Z = input.rotation(Rotation.Roll) * 1
     V = input.rotation(Rotation.Pitch) * 1
     radio.sendString("$," + convertToText(X) + "," + convertToText(Y) + "," + convertToText(Z) + "," + convertToText(V))
